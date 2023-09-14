@@ -50,7 +50,7 @@ app.get('/info', (request, response) => {
     response.send(`<div>Phone book has infor for ${count} people </br>${receivedTime}</div>`)
 })
 
-app.get('/api/persons/:id', (request, response) => {
+app.get('/api/persons/:id', (request, response, next) => {
   //ex 3.18
   Phone.findById(request.params.id)
     .then(result => {
